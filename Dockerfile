@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY eval.c /app/eval.c
 COPY decode_cigar.py /app/decode_cigar.py
+COPY sample_solver.py /app/sample_solver.py
 
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y --no-install-suggests --no-install-recommends gcc libc6-dev python3 \

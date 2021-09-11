@@ -1,6 +1,7 @@
 # genocon2021-docker
 
 A docker image where you can run a judge program (`eval.c`) and multiple sequence alignment converter (`decode_cigar.py`).
+This repostiory also provides a sample solver (`sample_solver.py`).
 
 ## Requirements
 
@@ -35,9 +36,43 @@ Note: If you use Windows, this document expects you run all the commands on term
    docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/output.txt
    ```
 
-3. Run YOUR program with `data/very-small-sample/testcase.txt` to generate `data/very-small-sample/your-output.txt`
+   The following result is shown:
 
-4. Run the judge program with YOUR output data
+   ```
+   raw_score: 27
+   final_score (raw_score / 100): 0
+   ```
+
+3. Run the sample solver with `data/very-small-sample/testcase.txt` to generate `data/very-small-sample/sample-output.txt`
+
+   - If you have Python3 on your local PC
+
+     ```
+     python3 sample_solver.py data/very-small-sample/testcase.txt > data/very-small-sample/sample-output.txt
+     ```
+
+   - If you don't have Python3 on your local PC
+
+     ```
+     docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/very-small-sample/testcase.txt > data/very-small-sample/sample-output.txt
+     ```
+
+4. Run the judge program with the output data of the sample solver
+
+   ```
+   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/sample-output.txt
+   ```
+
+   The following result is shown:
+
+   ```
+   raw_score: -72
+   final_score (raw_score / 100): 0
+   ```
+
+5. Run YOUR solver with `data/very-small-sample/testcase.txt` to generate `data/very-small-sample/your-output.txt`
+
+6. Run the judge program with the output data of YOUR solver
 
    ```
    docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/your-output.txt
@@ -62,12 +97,46 @@ Note: If you use Windows, this document expects you run all the commands on term
 5. Confirm the judge program works well with the sample output data
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval src_genocon2021/dat/gen1_small_10.answer.txt src_genocon2021/dat/your- output.txt
+   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/gen1_small_10.output.txt
    ```
 
-6. Run YOUR program with `data/dat/gen1_small_10.testcase.txt` to generate `data/dat/your-output.txt`
+   The following result is shown:
 
-7. Run the judge program with YOUR output data
+   ```
+   raw_score: 59948
+   final_score (raw_score / 100): 599
+   ```
+
+6. Run the sample solver with `data/dat/gen1_small_10.testcase.txt` to generate `data/dat/gen1_small_10.output.txt`
+
+   - If you have Python3 on your local PC
+
+     ```
+     python3 sample_solver.py data/dat/gen1_small_10.testcase.txt > data/dat/sample-output.txt
+     ```
+
+   - If you don't have Python3 on your local PC
+
+     ```
+     docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/dat/gen1_small_10.testcase.txt > data/dat/sample-output.txt
+     ```
+
+7. Run the judge program with the output data of the sample solver
+
+   ```
+   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/sample-output.txt
+   ```
+
+   The following result is shown:
+
+   ```
+   raw_score: 44560
+   final_score (raw_score / 100): 445
+   ```
+
+8. Run YOUR program with `data/dat/gen1_small_10.testcase.txt` to generate `data/dat/your-output.txt`
+
+9. Run the judge program with YOUR output data
 
    ```
    docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/your-output.txt
@@ -78,6 +147,20 @@ Note: If you use Windows, this document expects you run all the commands on term
 1. `docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 decode_cigar.py data/very-small-sample/testcase.txt > msa.txt`
 
 2. Open `msa.txt` (e.g. `less msa.txt`)
+
+## For Mainteners
+
+### Format Code
+
+```
+clang-format -i eval.c && npx prettier -w README.md
+```
+
+### Deploy Docker Image
+
+```
+docker build -t exkazuu/genocon2021 . && docker push exkazuu/genocon2021
+```
 
 ## LICENSE
 

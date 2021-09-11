@@ -42,6 +42,7 @@ int read_file(char *fname, char **buf, char **s1, char **s2) {
   int retval = 0;
   char *p;
   size_t sz;
+  int i, j;
 
   *buf = NULL;
   fp = fopen(fname, "r");
@@ -69,6 +70,12 @@ int read_file(char *fname, char **buf, char **s1, char **s2) {
     retval = -1;
     goto END;
   }
+  for (i = 0, j = 0; i < file_stat.st_size; i++) {
+    if ((*buf)[i] != '\r')
+      (*buf)[j++] = (*buf)[i];
+  }
+  sz = j;
+
   *s1 = *buf;
   p = (char *)memchr(*buf, '\n', sz);
   if (p == NULL) {
@@ -76,6 +83,7 @@ int read_file(char *fname, char **buf, char **s1, char **s2) {
     retval = -1;
     goto END;
   }
+
   *p++ = '\0';
 
   *s2 = p;
