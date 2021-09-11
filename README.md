@@ -3,6 +3,9 @@
 A docker image where you can run a judge program (`eval.c`) and multiple sequence alignment converter (`decode_cigar.py`).
 This repostiory also provides a sample solver (`sample_solver.py`).
 
+[![dockeri.co](https://dockeri.co/image/exkazuu/genocon2021)](https://hub.docker.com/r/exkazuu/genocon2021)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
 ## Requirements
 
 - For Windows
