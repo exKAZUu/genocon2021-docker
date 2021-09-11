@@ -80,7 +80,7 @@ This repostiory also provides a sample solver (`sample_solver.py`).
    docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/your-output.txt
    ```
 
-### For Small Sample Data
+### For Sample Data (`src_genocon2021.tar.gz`)
 
 1. Create `data` directory
 
