@@ -17,7 +17,7 @@
 - MacOS をご利用の方
   - [Docker Desktop for Mac](https://docs.docker.jp/docker-for-mac/install.html)
 - Linux をご利用の方
-  - [Docker](https://docs.docker.jp/linux/index.html)
+  - [Docker](https://docs.docker.com/engine/install/#server)
 
 ## あなたのプログラムが出力した結果を評価する方法
 

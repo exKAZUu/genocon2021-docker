@@ -11,13 +11,13 @@ This repostiory also provides a sample solver (`sample_solver.py`).
 ## Requirements
 
 - For Windows
-  - [Windows Subsystem for Linux 2 (WSL2)](https://docs.microsoft.com/ja-jp/windows/wsl/install-win10)
-  - [Docker Desktop for Windows WSL 2 バックエンド](https://docs.docker.jp/docker-for-windows/wsl.html)
+  - [Windows Subsystem for Linux 2 (WSL2)](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+  - [Docker Desktop for Windows WSL 2 backend](https://docs.docker.com/desktop/windows/wsl/)
   - **Note: this document expects you run all the commands on terminal of Ubuntu on WSL2.**
 - For MacOS
-  - [Docker Desktop for Mac](https://docs.docker.jp/docker-for-mac/install.html)
+  - [Docker Desktop for Mac](https://docs.docker.com/desktop/mac/install/)
 - For Linux
-  - [Docker](https://docs.docker.jp/linux/index.html)
+  - [Docker](https://docs.docker.com/engine/install/#server)
 
 ## How to Evaluate Your Output on Docker
 
