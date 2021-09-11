@@ -1,4 +1,5 @@
 FROM debian:buster-slim
+LABEL maintainer "Kazunori Sakamoto <exkazuu@gmail.com>"
 
 WORKDIR /app
 

@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 # NOTE: Please use Python 3.x
 #       Not compatible with Python 2.x
+#
+# Copyright 2021 Kasahara Lab. at the University of Tokyo
+# License: BSD 3-Clause License
 
 import os
 import sys

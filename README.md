@@ -2,6 +2,18 @@
 
 A docker image where you can run a judge program (`eval.c`) and multiple sequence alignment converter (`decode_cigar.py`).
 
+## Requirements
+
+- For Windows
+  - [Windows Subsystem for Linux 2 (WSL2)](https://docs.microsoft.com/ja-jp/windows/wsl/install-win10)
+  - [Docker Desktop for Windows WSL 2 バックエンド](https://docs.docker.jp/docker-for-windows/wsl.html)
+- For MacOS
+  - [Docker Desktop for Mac](https://docs.docker.jp/docker-for-mac/install.html)
+- For Linux
+  - [Docker](https://docs.docker.jp/linux/index.html)
+
+Note: If you use Windows, this document expects you run all the commands on terminal of Ubuntu on WSL2.
+
 ## How to Evaluate Your Output on Docker
 
 ### For Very Small Sample Data
