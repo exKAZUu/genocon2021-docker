@@ -1,6 +1,6 @@
 # genocon2021-docker
 
-A docker image where you can run a judge program (`eval.c`) and multiple sequence alignment converter (`decode_cigar.py`).
+A docker image where you can run a judge program (`eval.c`) and a converter for multiple sequence alignment (`decode_cigar.py`).
 This repostiory also provides a sample solver (`sample_solver.py`).
 
 [![dockeri.co](https://dockeri.co/image/exkazuu/genocon2021)](https://hub.docker.com/r/exkazuu/genocon2021)
