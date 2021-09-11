@@ -8,7 +8,6 @@ This repostiory also provides a sample solver (`sample_solver.py`).
 
 [日本語版](https://github.com/exKAZUu/genocon2021-docker/blob/main/README.md) も公開しています。
 
-
 ## Requirements
 
 - For Windows

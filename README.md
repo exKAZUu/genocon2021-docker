@@ -1,6 +1,6 @@
 # genocon2021-docker
 
-本リポジトリでは、ジャッジプログラム(`eval.c`)とMultiple Sequence Alignment (MSA)変換プログラム(`decode_cigar.py`)を同梱したDockerイメージを提供しています。
+本リポジトリでは、ジャッジプログラム(`eval.c`)と Multiple Sequence Alignment (MSA) 変換プログラム(`decode_cigar.py`)を同梱した Docker イメージを提供しています。
 また、サンプル解答プログラム(`sample_solver.py`)もあわせて提供していますので、ご活用ください。
 
 [![dockeri.co](https://dockeri.co/image/exkazuu/genocon2021)](https://hub.docker.com/r/exkazuu/genocon2021)
@@ -10,13 +10,13 @@
 
 ## 必要なソフトウェア
 
-- Windowsをご利用の方
+- Windows をご利用の方
   - [Windows Subsystem for Linux 2 (WSL2)](https://docs.microsoft.com/ja-jp/windows/wsl/install-win10)
   - [Docker Desktop for Windows WSL 2 バックエンド](https://docs.docker.jp/docker-for-windows/wsl.html)
-  - **注意：本ドキュメントは、WSL2のUbuntu上でコマンドを実行していただくことを想定して作成しております。**
-- MacOSをご利用の方
+  - **注意：本ドキュメントは、WSL2 の Ubuntu 上でコマンドを実行していただくことを想定して作成しております。**
+- MacOS をご利用の方
   - [Docker Desktop for Mac](https://docs.docker.jp/docker-for-mac/install.html)
-- Linuxをご利用の方
+- Linux をご利用の方
   - [Docker](https://docs.docker.jp/linux/index.html)
 
 ## あなたのプログラムが出力した結果を評価する方法
@@ -49,13 +49,13 @@
 
 3. `data/very-small-sample/testcase.txt` に対してサンプル解答プログラムを実行して、 `data/very-small-sample/sample-output.txt` を生成します。
 
-   - あなたのPC上でPython 3を実行する場合
+   - あなたの PC 上で Python 3 を実行する場合
 
      ```
      python3 sample_solver.py data/very-small-sample/testcase.txt > data/very-small-sample/sample-output.txt
      ```
 
-   - Dockerコンテナ上でPython 3を実行する場合
+   - Docker コンテナ上で Python 3 を実行する場合
 
      ```
      docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/very-small-sample/testcase.txt > data/very-small-sample/sample-output.txt
@@ -92,11 +92,11 @@
    mkdir -p data
    ```
 
-2. `src_genocon2021.tar.gz` をダウンロードします。詳細は https://atcoder.jp/contests/genocon2021 に記載されている2021/9/11のトピックを御覧ください。
+2. `src_genocon2021.tar.gz` をダウンロードします。詳細は https://atcoder.jp/contests/genocon2021 に記載されている 2021/9/11 のトピックを御覧ください。
 
 3. `src_genocon2021.tar.gz` を解凍します。 (例: `tar -xvf src_genocon2021.tar.gz`)
 
-4. `src_genocon2021/dat` ディレクトリを手順1で作成した `data` ディレクトリの中に移動します。 (例: `mv src_genocon2021/dat <genocon2021用のあなたのワーキングディレクトリ>/data/`)
+4. `src_genocon2021/dat` ディレクトリを手順 1 で作成した `data` ディレクトリの中に移動します。 (例: `mv src_genocon2021/dat <genocon2021用のあなたのワーキングディレクトリ>/data/`)
 
 5. ジャッジプログラムが正常に動作することを確認します。
 
@@ -113,13 +113,13 @@
 
 6. `data/dat/gen1_small_10.testcase.txt` に対して **あなたが作成した解答プログラム** を実行して、 `data/dat/gen1_small_10.output.txt` を生成します。
 
-   - あなたのPC上でPython 3を実行する場合
+   - あなたの PC 上で Python 3 を実行する場合
 
      ```
      python3 sample_solver.py data/dat/gen1_small_10.testcase.txt > data/dat/sample-output.txt
      ```
 
-   - Dockerコンテナ上でPython 3を実行する場合
+   - Docker コンテナ上で Python 3 を実行する場合
 
      ```
      docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/dat/gen1_small_10.testcase.txt > data/dat/sample-output.txt
@@ -160,7 +160,7 @@
 clang-format -i eval.c && npx prettier -w README*.md
 ```
 
-### Dockerイメージのデプロイ
+### Docker イメージのデプロイ
 
 ```
 docker build -t exkazuu/genocon2021 . && docker push exkazuu/genocon2021
