@@ -70,11 +70,6 @@ int read_file(char *fname, char **buf, char **s1, char **s2) {
     retval = -1;
     goto END;
   }
-  for (i = 0, j = 0; i < file_stat.st_size; i++) {
-    if ((*buf)[i] != '\r')
-      (*buf)[j++] = (*buf)[i];
-  }
-  sz = j;
 
   *s1 = *buf;
   p = (char *)memchr(*buf, '\n', sz);
@@ -83,7 +78,9 @@ int read_file(char *fname, char **buf, char **s1, char **s2) {
     retval = -1;
     goto END;
   }
-
+  if(p != *buf && *(p-1) == '\r'){
+      *(p-1) = '\0';
+  }
   *p++ = '\0';
 
   *s2 = p;
@@ -92,6 +89,9 @@ int read_file(char *fname, char **buf, char **s1, char **s2) {
     error("invalid format");
     retval = -1;
     goto END;
+  }
+  if(*(p-1) == '\r'){
+      *(p-1) = '\0';
   }
   *p = '\0';
 
