@@ -37,7 +37,7 @@ This repostiory also provides a sample solver (`sample_solver.py`).
 2. Confirm the judge program works well with the sample output data
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/output.txt
    ```
 
    The following result is shown:
@@ -58,13 +58,13 @@ This repostiory also provides a sample solver (`sample_solver.py`).
    - If you run Python 3 on Docker container
 
      ```
-     docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/very-small-sample/testcase.txt > data/very-small-sample/sample-output.txt
+     docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/very-small-sample/testcase.txt > data/very-small-sample/sample-output.txt
      ```
 
 4. Run the judge program with the output data of the sample solver
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/sample-output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/sample-output.txt
    ```
 
    The following result is shown:
@@ -79,7 +79,7 @@ This repostiory also provides a sample solver (`sample_solver.py`).
 6. Run the judge program with the output data of YOUR solver
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/your-output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/your-output.txt
    ```
 
 ### For Sample Data (`src_genocon2021.tar.gz`)
@@ -101,7 +101,7 @@ This repostiory also provides a sample solver (`sample_solver.py`).
 5. Confirm the judge program works well with the sample output data
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/gen1_small_10.output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/gen1_small_10.output.txt
    ```
 
    The following result is shown:
@@ -122,13 +122,13 @@ This repostiory also provides a sample solver (`sample_solver.py`).
    - If you run Python 3 on Docker container
 
      ```
-     docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/dat/gen1_small_10.testcase.txt > data/dat/sample-output.txt
+     docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/dat/gen1_small_10.testcase.txt > data/dat/sample-output.txt
      ```
 
 7. Run the judge program with the output data of the sample solver
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/sample-output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/sample-output.txt
    ```
 
    The following result is shown:
@@ -143,12 +143,12 @@ This repostiory also provides a sample solver (`sample_solver.py`).
 9. Run the judge program with YOUR output data
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/your-output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/your-output.txt
    ```
 
 ## How to Convert `testcase.txt` into Multiple Sequence Alignment (MSA)
 
-1. `docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 decode_cigar.py data/very-small-sample/testcase.txt > msa.txt`
+1. `docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 decode_cigar.py data/very-small-sample/testcase.txt > msa.txt`
 
 2. Open `msa.txt` (e.g. `less msa.txt`)
 

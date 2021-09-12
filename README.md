@@ -37,7 +37,7 @@
 2. ジャッジプログラムが正常に動作することを確認します。
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/output.txt
    ```
 
    上記コマンドを実行すると、以下の採点結果が表示されます。
@@ -58,13 +58,13 @@
    - Docker コンテナ上で Python 3 を実行する場合
 
      ```
-     docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/very-small-sample/testcase.txt > data/very-small-sample/sample-output.txt
+     docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/very-small-sample/testcase.txt > data/very-small-sample/sample-output.txt
      ```
 
 4. ジャッジプログラムを実行して得られた出力データを採点します。
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/sample-output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/sample-output.txt
    ```
 
    上記コマンドを実行すると、以下の採点結果が表示されます。
@@ -79,7 +79,7 @@
 6. ジャッジプログラムを実行してあなたのプログラムの出力データを採点します。
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/your-output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/very-small-sample/answer.txt data/very-small-sample/your-output.txt
    ```
 
 ### 公開中のサンプルデータ (`src_genocon2021.tar.gz`) で評価する方法
@@ -101,7 +101,7 @@
 5. ジャッジプログラムが正常に動作することを確認します。
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/gen1_small_10.output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/gen1_small_10.output.txt
    ```
 
    上記コマンドを実行すると、以下の採点結果が表示されます。
@@ -122,13 +122,13 @@
    - Docker コンテナ上で Python 3 を実行する場合
 
      ```
-     docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/dat/gen1_small_10.testcase.txt > data/dat/sample-output.txt
+     docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 sample_solver.py data/dat/gen1_small_10.testcase.txt > data/dat/sample-output.txt
      ```
 
 7. ジャッジプログラムを実行して得られた出力データを採点します。
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/sample-output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/sample-output.txt
    ```
 
    上記コマンドを実行すると、以下の採点結果が表示されます。
@@ -143,12 +143,12 @@
 9. ジャッジプログラムを実行してあなたのプログラムの出力データを採点します。
 
    ```
-   docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/your-output.txt
+   docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 ./eval data/dat/gen1_small_10.answer.txt data/dat/your-output.txt
    ```
 
 ## `testcase.txt` を Multiple Sequence Alignment (MSA) に変換する方法
 
-1. `docker run -it --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 decode_cigar.py data/very-small-sample/testcase.txt > msa.txt`
+1. `docker run --rm -v $(pwd)/data:/app/data exkazuu/genocon2021 python3 decode_cigar.py data/very-small-sample/testcase.txt > msa.txt`
 
 2. `msa.txt` を開きます。 (例: `less msa.txt`)
 

@@ -78,8 +78,8 @@ int read_file(char *fname, char **buf, char **s1, char **s2) {
     retval = -1;
     goto END;
   }
-  if(p != *buf && *(p-1) == '\r'){
-      *(p-1) = '\0';
+  if (p != *buf && *(p - 1) == '\r') {
+    *(p - 1) = '\0';
   }
   *p++ = '\0';
 
@@ -90,8 +90,8 @@ int read_file(char *fname, char **buf, char **s1, char **s2) {
     retval = -1;
     goto END;
   }
-  if(*(p-1) == '\r'){
-      *(p-1) = '\0';
+  if (*(p - 1) == '\r') {
+    *(p - 1) = '\0';
   }
   *p = '\0';
 
